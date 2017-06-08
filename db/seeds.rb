@@ -14,4 +14,4 @@ end
 
 
 
-Post.create(title: Faker::StarWars.quote, cover_image: Faker::LoremPixel.image("1200x720"), user: User.first, content: Faker::Hipster.paragraph(90, false, 160))
+Post.create(title: Faker::StarWars.quote, cover_image: Faker::LoremPixel.image("1200x720"), user: User.first, content:Faker::Hipster.paragraphs(20, true))
