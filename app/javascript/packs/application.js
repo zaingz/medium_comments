@@ -32,3 +32,4 @@
 //
 //   ReactDOM.render(<Hello {...data} />, node)
 // })
+console.log('just to pass webpacker')
