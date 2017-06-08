@@ -1,9 +1,9 @@
 //
 // import ReactDOM from 'react-dom'
 // import React from 'react'
- import Hello from './components/hello'
- import ReactDOM from 'react-dom'
- import React from 'react';
+ // import Hello from './components/hello'
+ // import ReactDOM from 'react-dom'
+ // import React from 'react';
 //
 // document.addEventListener("DOMContentLoaded", e => {
 //   ReactDOM.render(<Hello name="React by Zain" />, document.body.appendChild(document.createElement('div')))
@@ -25,10 +25,10 @@
 
 
 
-console.log('default component');
-document.addEventListener('DOMContentLoaded', () => {
-  const node = document.getElementById('hello-react')
-  const data = JSON.parse(node.getAttribute('data'))
-
-  ReactDOM.render(<Hello {...data} />, node)
-})
+// console.log('default component');
+// document.addEventListener('DOMContentLoaded', () => {
+//   const node = document.getElementById('hello-react')
+//   const data = JSON.parse(node.getAttribute('data'))
+//
+//   ReactDOM.render(<Hello {...data} />, node)
+// })
