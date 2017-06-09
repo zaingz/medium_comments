@@ -14,4 +14,10 @@ end
 
 
 
-Post.create(title: Faker::StarWars.quote, cover_image: Faker::LoremPixel.image("1200x720"), user: User.first, content:Faker::Hipster.paragraphs(20, true))
+content =''
+ Faker::Hipster.paragraphs(20, true).each do |p|
+  content += '<p>' + p + '</p>'
+
+end
+
+Post.create(title: Faker::StarWars.quote, cover_image: Faker::LoremPixel.image("1200x720"), user: User.first, content:content)

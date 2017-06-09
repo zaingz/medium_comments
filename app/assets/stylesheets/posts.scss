@@ -5,12 +5,123 @@
   width: 100%;
 }
 
+.h-note {
+  background-color: powderblue;
+}
+
+.h-comment {
+  position: absolute;
+  left: 100%;
+  margin-left: 20px;
+  width: 220px;
+  text-align: left;
+  background: #EEE;
+  border-radius: 4px;
+
+  border: 1px solid #CCC;
+  padding: 5px 20px;
+  font-size: 16px;
+
+
+  &:hover{
+    z-index: 1;
+  }
+  .value {
+    margin-top: -5px;
+    font-size: 14px;
+  }
+}
+
+.author {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+
+  p {
+    margin-top: 10px;
+  }
+
+  img{
+
+    border: 1px solid #EEE;
+    margin: 0px auto;
+    border-radius: 100%;
+    width: 80px;
+  }
+}
+
 .post-content {
-  font-size: 22px;
-  line-height: 36px;
-  word-spacing: 5px;
+  font-size: 18px;
+  line-height: 34px;
+  word-spacing: 3px;
 }
 
 .highlight {
-  background-color: powderblue;
+  background-color: #4CAF50;
+  color:white;
+}
+
+
+
+.select_toolbar {
+  display: none;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+
+  .container {
+
+      border-radius: 4px;
+      background-color: #222;
+      display: flex;
+      flex-direction: column;
+
+      .input {
+        display: none;
+        margin: 20px 0px;
+        width: 100%;
+        .submit {
+          cursor: pointer;
+          float: right;
+          color: #EEE;
+          margin-top: 5px;
+          margin-right: 5px;
+        }
+
+        textarea {
+          width: 100%;
+          border-radius: 4px;
+        }
+
+      }
+
+      .actions {
+        display: flex;
+        color: white;
+        height: 40px;
+        padding: 10px 23px;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .note, .comment{
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        p{
+          margin: 0;
+        }
+      }
+      img {
+        height: 20px;
+        margin-left:  15px;
+        width: 20px;
+        filter: invert(1);
+      }
+  }
 }
