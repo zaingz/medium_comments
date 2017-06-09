@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
 
   def update
-    Post.first.update(content: params[:content])
+    #Post.first.update(content: params[:content])
     cookies[:post] = YAML::dump Post.first
   end
 end
