@@ -1,58 +1,31 @@
 
-<!-- Page Content -->
 <div class="container post">
 
     <div class="row">
 
-        <!-- Blog Post Content Column -->
         <div class="col-xs-6  col-sm-6 col-md-6 col-lg-10">
 
-            <!-- Blog Post -->
-
-            <!-- Title -->
             <h1><%= @post.title %></h1>
-
-            <!-- Author -->
-
-            <!-- Date/Time -->
             <p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p>
 
             <hr>
-
-            <!-- Preview Image -->
-
               <%= image_tag @post.cover_image, class: 'post-image' %>
-
             <hr>
-
-            <!-- Post Content -->
             <div class="post-content">
             <%= @post.content.html_safe%>
-
           </div>
             <hr>
-
         </div>
-
-
     </div>
-    <!-- /.row -->
-
 
     <div class="row">
       <div class="author col-xs-6  col-sm-6 col-md-6 col-lg-10">
         <%= image_tag @post.user.avatar %>
         <p>Published by <a href="#"><%= @post.user.name %></a></p>
-
       </div>
     </div
-
     <hr>
 
-
 </div>
-<!-- /.container -->
-
-
 
   <%= render partial: 'select_toolbar' %>

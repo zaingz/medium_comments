@@ -29,6 +29,10 @@
   .value {
     margin-top: -5px;
     font-size: 14px;
+    white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+
   }
 }
 
@@ -43,7 +47,6 @@
   }
 
   img{
-
     border: 1px solid #EEE;
     margin: 0px auto;
     border-radius: 100%;
@@ -63,7 +66,6 @@
 }
 
 
-
 .select_toolbar {
   display: none;
   width: 100%;
@@ -76,52 +78,52 @@
 
   .container {
 
-      border-radius: 4px;
-      background-color: #222;
-      display: flex;
-      flex-direction: column;
+    border-radius: 4px;
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
 
-      .input {
-        display: none;
-        margin: 20px 0px;
-        width: 100%;
-        .submit {
-          cursor: pointer;
-          float: right;
-          color: #EEE;
-          margin-top: 5px;
-          margin-right: 5px;
-        }
-
-        textarea {
-          width: 100%;
-          border-radius: 4px;
-        }
-
-      }
-
-      .actions {
-        display: flex;
-        color: white;
-        height: 40px;
-        padding: 10px 23px;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .note, .comment{
-        display: flex;
-        justify-content: space-between;
+    .input {
+      display: none;
+      margin: 20px 0px;
+      width: 100%;
+      .submit {
         cursor: pointer;
-        p{
-          margin: 0;
-        }
+        float: right;
+        color: #EEE;
+        margin-top: 5px;
+        margin-right: 5px;
       }
-      img {
-        height: 20px;
-        margin-left:  15px;
-        width: 20px;
-        filter: invert(1);
+
+      textarea {
+        width: 100%;
+        border-radius: 4px;
       }
+
+    }
+
+    .actions {
+      display: flex;
+      color: white;
+      height: 40px;
+      padding: 10px 23px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .note, .comment{
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      p{
+        margin: 0;
+      }
+    }
+    img {
+      height: 20px;
+      margin-left:  15px;
+      width: 20px;
+      filter: invert(1);
+    }
   }
 }
