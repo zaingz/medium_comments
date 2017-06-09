@@ -1,5 +1,9 @@
 document.addEventListener("turbolinks:load", function(event) {
     $('.select_toolbar').slideUp();
+
+    if (localStorage.getItem('content')){
+      $('.post-content').html(localStorage.getItem('content'))
+    }
     $('.post').mouseup(function() {
         var text = getSelectedText();
         var parse = $('.post-content').html().replace(/(<span[^>]*>)|(<\/span>)/ig, "");
@@ -99,22 +103,22 @@ document.addEventListener("turbolinks:load", function(event) {
 
 
 
+        localStorage.setItem('content', $('.post-content').html());
 
 
-
-
-        $.ajax({
-          url: 'posts/update',
-          type: 'POST',
-          data: {content: $('.post-content').html()},
-
-          dataType: 'json',
-          success: function(data) {
-            console.log('sucess');
-          }
-          }).done(function(msg) {
-              console.log('done');
-          });
+        //
+        // $.ajax({
+        //   url: 'posts/update',
+        //   type: 'POST',
+        //   data: {content: $('.post-content').html()},
+        //
+        //   dataType: 'json',
+        //   success: function(data) {
+        //     console.log('sucess');
+        //   }
+        //   }).done(function(msg) {
+        //       console.log('done');
+        //   });
 
 
     });
