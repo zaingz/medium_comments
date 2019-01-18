@@ -1,10 +1,13 @@
-var data
-var action
+var data;
+var action;
+var that = this;
+
 document.addEventListener("turbolinks:load", function(event) {
     $('.select_toolbar').slideUp();
 
-    $( '*' ).add( ".post" ).on('mouseup', function() {
-    //$( ".post" ).on('mouseup', function() {
+    $( '*' ).on('mouseup', function(event) {
+        event.preventDefault()
+        
         var text = getSelectedText();
         var parse = $('.post-content').html().replace(/(<span>)|(<\/span>)/, "");
 
@@ -82,22 +85,23 @@ document.addEventListener("turbolinks:load", function(event) {
         }
 
  
-        if (Object.prototype.toString.call(data) !== '[object Array]'){
-            data = new Array
+        if (Object.prototype.toString.call(this.data) !== '[object Array]'){
+            this.data = new Array
         }
-
-        Array.prototype.push.apply(data, [{text: current_p, comment: val, type: heading, style: style}])
- 
-        (function(data){
-            data.reverse().forEach(function(element){
+        
+        Array.prototype.push.apply(this.data, [{text: current_p, comment: val, type: heading, style: style}])
+        
+        setTimeout(
+        (function render(){
+            this.data.reverse().forEach(function(element){
                 var text = element.text;
                 var comment = element.comment;
                 var type = element.type;
                 var style = element.style;
                 $('.highlight').parent().html('<p>' + text + '<div class="h-comment" ' + style + '">' + type + '<div class="value">' + comment + '</div>' + '</div> </p>');
-    
             })
-        })(data)
-
+        }).call(that), 0);
+ 
     });
+    
 });
